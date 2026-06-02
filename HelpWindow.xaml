@@ -1,0 +1,98 @@
+﻿<!-- HelpWindow.xaml -->
+<Window x:Class="NewsAggregator.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="❓ 如何获取 RSS 源" Height="550" Width="700"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Background="{StaticResource BackgroundBrush}"
+        FontFamily="Microsoft YaHei UI" FontSize="13">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0" Text="❓ 如何获取 RSS 订阅源" FontSize="20" FontWeight="Bold"
+                   Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,15"/>
+
+        <!-- 内容区域 -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <!-- 方法一 -->
+                <Border Background="{StaticResource SurfaceBrush}" Padding="16" Margin="0,0,0,12"
+                        BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="8">
+                    <StackPanel>
+                        <TextBlock Text="方法一：查看网页源代码" FontSize="15" FontWeight="Bold"
+                                   Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Text="1. 打开你感兴趣的网站" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="2. 在页面空白处右键 → 查看网页源代码" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="3. 按 Ctrl+F 搜索：rss 或 feed 或 atom" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="4. 找到类似 &lt;link rel=&quot;alternate&quot; href=&quot;...&quot;&gt; 的标签" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="5. 复制 href 里的完整地址，粘贴到本软件的订阅管理" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 方法二 -->
+                <Border Background="{StaticResource SurfaceBrush}" Padding="16" Margin="0,0,0,12"
+                        BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="8">
+                    <StackPanel>
+                        <TextBlock Text="方法二：常见网站 RSS 地址规律" FontSize="15" FontWeight="Bold"
+                                   Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Text="• 博客园：https://www.cnblogs.com/用户名/rss" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,3"/>
+                        <TextBlock Text="• CSDN：https://blog.csdn.net/用户名/rss/list" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,3"/>
+                        <TextBlock Text="• 简书：https://www.jianshu.com/u/用户名/feed" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,3"/>
+                        <TextBlock Text="• GitHub 仓库：https://github.com/用户名/仓库名/releases.atom" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 方法三 -->
+                <Border Background="{StaticResource SurfaceBrush}" Padding="16" Margin="0,0,0,12"
+                        BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="8">
+                    <StackPanel>
+                        <TextBlock Text="方法三：使用浏览器插件" FontSize="15" FontWeight="Bold"
+                                   Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Text="安装浏览器扩展「RSSHub Radar」：" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="• Chrome/Edge 插件商店搜索 RSSHub Radar" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="• 安装后，打开任意网页，如果有 RSS 源会自动弹出提示" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="• 点击插件图标，一键复制 RSS 地址" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 方法四 -->
+                <Border Background="{StaticResource SurfaceBrush}" Padding="16" Margin="0,0,0,12"
+                        BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="8">
+                    <StackPanel>
+                        <TextBlock Text="方法四：找网页上的 RSS 图标" FontSize="15" FontWeight="Bold"
+                                   Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Text="有些网站会在页面顶部、底部或侧边栏放一个橙色的 📡 或 RSS 图标" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="直接点击图标，复制浏览器地址栏的链接即可" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 方法五 -->
+                <Border Background="{StaticResource SurfaceBrush}" Padding="16"
+                        BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="8">
+                    <StackPanel>
+                        <TextBlock Text="方法五：直接用搜索模式发现内容" FontSize="15" FontWeight="Bold"
+                                   Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Text="如果以上方法都找不到 RSS 源：" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="1. 点击本软件顶部的「🔍 搜索模式」" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="2. 输入感兴趣的关键词，点「搜索网络」" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="3. 在浏览器里找到感兴趣的网站" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                        <TextBlock Text="4. 再回到这里，用方法一或方法三找该网站的 RSS 地址" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- 关闭按钮 -->
+        <Button Grid.Row="2" Content="关闭" Width="80" HorizontalAlignment="Right"
+                Style="{StaticResource PrimaryButtonStyle}" Margin="0,15,0,0"
+                Click="BtnClose_Click"/>
+    </Grid>
+</Window>
